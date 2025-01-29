@@ -279,7 +279,7 @@ function filterByAmenity(hotel, amenity){
 app.get("/hotels/filter/amenity", (req, res) => {
   let amenity = req.query.amenity;
   let result = hotels.filter(hotel => filterByAmenity(hotel, amenity))
-  res.json(result)
+  res.json({ hotels: result })
 })
 
 //Endpoint5
@@ -290,7 +290,7 @@ function filterByCountry(hotel, country){
 app.get("/hotels/filter/country", (req, res) => {
   let country = req.query.country;
   let result = hotels.filter(hotel => filterByCountry(hotel, country))
-  res.json(result)
+  res.json({ hotels: result })
 })
 
 //Endpoint6
@@ -301,12 +301,12 @@ function filterByCategory(hotel, category){
 app.get("/hotels/filter/category", (req, res) => {
   let category = req.query.category;
   let result = hotels.filter(hotel => filterByCategory(hotel, category))
-  res.json(result)
+  res.json({ hotels: result })
 })
 
 //Endpoint7
 app.get("/hotels", (req, res) => {
-  res.json(hotels)
+  res.json({ hotels: hotels })
 })
 
 const port = 3000;
